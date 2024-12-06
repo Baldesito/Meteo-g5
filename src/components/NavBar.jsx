@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function CustomNavbar() {

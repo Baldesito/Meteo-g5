@@ -102,11 +102,12 @@ footer {
   align-items: center;
 }
 .weather-card:hover {
+  cursor: pointer;
   transform: scale(1.01);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 15px #b4a167;
+  box-shadow: 0 0 15px #614d22;
 }
 .forecast-card {
-  box-shadow: 0 0 15px #313253;
+  box-shadow: 0 0 15px #614d22;
   transform: scale(1.01);
 }
