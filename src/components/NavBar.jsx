@@ -28,19 +28,12 @@ function CustomNavbar() {
               Home
             </Link>
 
-            <Nav.Link className="fw-bold text-white" href="#">
-              Recently Added
-            </Nav.Link>
-
-            <NavDropdown
-              title="More"
-              id="basic-nav-dropdown"
-              className="fw-bold"
+            <Nav.Link
+              className="fw-bold text-white"
+              href="https://www.iconameteo.it/previsioni/italia/0"
             >
-              <NavDropdown.Item href="#">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
-            </NavDropdown>
+              Meteo Italia
+            </Nav.Link>
           </Nav>
           <div className="d-flex align-items-center">
             <i className="bi bi-search icons"></i>

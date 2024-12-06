@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { fetchWeatherData, fetchForecastData, fetchCityImage } from "../Api";
 
 const WeatherDetails = () => {
@@ -10,33 +10,37 @@ const WeatherDetails = () => {
   const [showDetails, setShowDetails] = useState(false);
 
   const handleFetchWeather = async () => {
+    if (city.trim() === "") return; // Non fare nulla se la città è vuota
     const weatherData = await fetchWeatherData(city);
     const forecastData = await fetchForecastData(city);
     const imageData = await fetchCityImage(city);
     setWeather(weatherData);
     setForecast(forecastData);
     setCityImage(imageData);
+    setShowDetails(false); // Reset dettagli quando viene fatta una nuova ricerca
+    setCity("");
   };
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
   };
 
-  useEffect(() => {
-    if (city) {
-      handleFetchWeather();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [city]);
+  const handleInputChange = (event) => {
+    setCity(event.target.value);
+  };
 
   return (
     <div className="weather-details-container">
-      <div className="input-group justify-content-center">
+      <h1 className="text-warning">
+        Mio Mete<i className="bi bi-brightness-high-fill"> </i> {""}
+        App
+      </h1>
+      <div className="input-group justify-content-center my-4">
         <input
-          className="bg-dark text-white form-control mb-1 m-2 rounded-4 border-0"
+          className="form-control mb-1 m-2 rounded-4 border-0"
           type="text"
           value={city}
-          onChange={(e) => setCity(e.target.value)}
+          onChange={handleInputChange}
           placeholder="Cerca una citta..."
         />
         <button
@@ -48,7 +52,7 @@ const WeatherDetails = () => {
         </button>
       </div>
       {cityImage && (
-        <div className="card city-image-card ">
+        <div className="card city-image-card my-4">
           <img src={cityImage} alt={city} className="card-img-top" />
         </div>
       )}
@@ -56,16 +60,21 @@ const WeatherDetails = () => {
         <div className="card weather-card text-white" onClick={toggleDetails}>
           <div className="card-body">
             <h2 className="card-title">{weather.name}</h2>
-            <p className="card-text">Temperature: {weather.main.temp} °C</p>
             <p className="card-text">
-              Weather: {weather.weather[0].description}
+              {" "}
+              <i className="bi bi-cloud-sun-fill text-warning p-1"></i>{" "}
+              {weather.main.temp} °C{" "}
+              <i className="bi text-info bi bi-thermometer-half"></i>
             </p>
+            <p className="card-text">Tempo: {weather.weather[0].description}</p>
           </div>
         </div>
       )}
       {showDetails && forecast && (
         <div className="forecast-details">
-          <h3 className="text-white">5-day Forecast</h3>
+          <h2 className="text-warning justify-content-center">
+            Previsioni per 5-Giorni
+          </h2>
           <div className="row">
             {forecast.list.map(
               (item, index) =>
@@ -74,10 +83,16 @@ const WeatherDetails = () => {
                     <div className="card forecast-card">
                       <div className="card-body">
                         <p>
-                          Date: {new Date(item.dt_txt).toLocaleDateString()}
+                          <i className="bi text-info bi-calendar3"></i>{" "}
+                          {new Date(item.dt_txt).toLocaleDateString()}
                         </p>
-                        <p>Temperature: {item.main.temp} °C</p>
-                        <p>Weather: {item.weather[0].description}</p>
+                        <p>
+                          <i className="bi bi-cloud-sun-fill text-warning p-1"></i>{" "}
+                          {""}
+                          {item.main.temp} °C{" "}
+                          <i className="bi text-info bi bi-thermometer-half"></i>
+                        </p>
+                        <p>Tempo: {item.weather[0].description}</p>
                       </div>
                     </div>
                   </div>

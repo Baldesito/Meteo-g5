@@ -1,5 +1,5 @@
 body {
-  background-color: #221f1f;
+  background-color: rgb(41, 40, 33);
 }
 h1,
 h2,
@@ -50,13 +50,13 @@ footer {
   border-color: #838383;
 }
 .footer-button:hover {
-  background-color: #800c0c;
+  background-color: #e2a114;
   border-color: #838383;
 }
 
 .copyright {
   color: #838383;
-  font-size: 0.6em;
+  font-size: 1em;
 }
 
 .details-container {
@@ -66,26 +66,47 @@ footer {
 
 .weather-card,
 .forecast-card {
-  margin-top: 40px;
+  margin-top: 2.5rem;
   margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-color: #ffc107;
 }
 
 .card-img-top {
-  border-radius: 5px;
+  max-width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  max-height: auto;
 }
 
 .card-body {
-  background-color: #5a5757;
+  background-color: #221f1f;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .forecast-details .row {
-  color: white;
+  color: #f5f5f5;
   justify-content: center;
 }
 
 .forecast-card .card-body {
-  margin: 10px 0;
+  font-size: 1.2em;
+  background-color: #221f1f;
+}
+.city-image-card {
+  border: none;
+  background-color: #221f1f;
+  align-items: center;
+}
+.weather-card:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px #b4a167;
+}
+.forecast-card {
+  box-shadow: 0 0 15px #313253;
+  transform: scale(1.01);
 }

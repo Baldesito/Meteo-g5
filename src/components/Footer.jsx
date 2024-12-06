@@ -5,13 +5,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Footer() {
   return (
-    <footer className="bg-#221f1f text-light py-4">
+    <footer className="bg-#221f1f text-light py-5">
       <Container>
         <Row className="row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 mb-4">
           <Col className="footer-links">
             <p>
               <a href="#" className="text-light" alt="footer link">
-                Audio and Subtitles
+                Meteo
               </a>
             </p>
             <p>
@@ -33,7 +33,7 @@ function Footer() {
           <Col className="footer-links">
             <p>
               <a href="#" className="text-light" alt="footer link">
-                Audio Description
+                Description
               </a>
             </p>
             <p>
