@@ -1,0 +1,91 @@
+body {
+  background-color: #221f1f;
+}
+h1,
+h2,
+h4,
+p,
+footer {
+  text-align: center;
+  color: #f5f5f1;
+}
+
+.icons {
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+  font-size: 1.2em;
+  color: #f5f5f1;
+}
+
+.navbar-nav {
+  font-size: 90%;
+}
+
+#balde {
+  color: #f5f5f1;
+  font-size: 0.8em;
+}
+
+.footer-icon {
+  color: #838383;
+}
+
+.footer-links {
+  font-size: 0.8em;
+}
+
+.footer-links p {
+  margin-bottom: 0.3em;
+  color: #838383;
+}
+
+.footer-links a {
+  color: #838383;
+  text-decoration: none;
+}
+
+.footer-button {
+  background-color: #221f1f;
+  color: #838383;
+  border-color: #838383;
+}
+.footer-button:hover {
+  background-color: #800c0c;
+  border-color: #838383;
+}
+
+.copyright {
+  color: #838383;
+  font-size: 0.6em;
+}
+
+.details-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.weather-card,
+.forecast-card {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.card-img-top {
+  border-radius: 5px;
+}
+
+.card-body {
+  background-color: #5a5757;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-details .row {
+  color: white;
+  justify-content: center;
+}
+
+.forecast-card .card-body {
+  margin: 10px 0;
+}
