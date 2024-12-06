@@ -73,7 +73,7 @@ const WeatherDetails = () => {
       {showDetails && forecast && (
         <div className="forecast-details">
           <h2 className="text-warning justify-content-center">
-            Previsioni per 5-Giorni
+            Previsioni per 5 Giorni
           </h2>
           <div className="row">
             {forecast.list.map(
